@@ -9,7 +9,7 @@
 import UIKit
 
 struct Color {
-    static let mainRed = UIColor(named: "#FF7B7B")
+    static let mainRed = UIColor(named: "mainRed")
 }
 
 

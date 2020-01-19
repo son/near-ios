@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ShopDetailViewController: UIViewController {
+final class ShopDetailViewController: ViewController {
 
     @IBOutlet private weak var detailView: ShopDetailView!
     @IBOutlet private weak var bottomView: ShopDetailBottomView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: ViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -39,6 +39,10 @@ final class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: GridCell.className, bundle: nil), forCellWithReuseIdentifier: GridCell.description())
+
+        collectionView.refreshControl = RefreshControl { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
 }
 
