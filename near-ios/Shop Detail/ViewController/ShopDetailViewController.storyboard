@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CXt-J0-NTF">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shop Detail View Controller-->
+        <scene sceneID="S37-bE-Grf">
+            <objects>
+                <viewController id="CXt-J0-NTF" customClass="ShopDetailViewController" customModule="near_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eaf-Q9-jat">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-S4-d9c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="768" translatesAutoresizingMaskIntoConstraints="NO" id="FEA-XX-QmJ" customClass="ShopDetailView" customModule="near_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FEA-XX-QmJ" firstAttribute="width" secondItem="cRj-S4-d9c" secondAttribute="width" id="7y8-tg-md1"/>
+                                    <constraint firstAttribute="bottom" secondItem="FEA-XX-QmJ" secondAttribute="bottom" id="NNh-FM-JHw"/>
+                                    <constraint firstItem="FEA-XX-QmJ" firstAttribute="leading" secondItem="cRj-S4-d9c" secondAttribute="leading" id="NiQ-Tb-Q84"/>
+                                    <constraint firstItem="FEA-XX-QmJ" firstAttribute="top" secondItem="cRj-S4-d9c" secondAttribute="top" id="fMP-7F-OCJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="FEA-XX-QmJ" secondAttribute="trailing" constant="20" symbolic="YES" id="sMW-8q-BcU"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="84" translatesAutoresizingMaskIntoConstraints="NO" id="eE1-aN-Nac" customClass="ShopDetailBottomView" customModule="near_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="812" width="414" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nz7-vp-c8a">
+                                <rect key="frame" x="0.0" y="812" width="414" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="HLo-Gt-JXQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cxi-yl-VIL" firstAttribute="trailing" secondItem="Nz7-vp-c8a" secondAttribute="trailing" id="17z-VW-8jX"/>
+                            <constraint firstItem="eE1-aN-Nac" firstAttribute="leading" secondItem="Cxi-yl-VIL" secondAttribute="leading" id="DnV-vh-hmf"/>
+                            <constraint firstItem="cRj-S4-d9c" firstAttribute="leading" secondItem="Cxi-yl-VIL" secondAttribute="leading" id="L0R-SV-SMU"/>
+                            <constraint firstItem="Nz7-vp-c8a" firstAttribute="leading" secondItem="Cxi-yl-VIL" secondAttribute="leading" id="Pw7-qS-psz"/>
+                            <constraint firstItem="cRj-S4-d9c" firstAttribute="top" secondItem="Cxi-yl-VIL" secondAttribute="top" id="ajX-0j-zz0"/>
+                            <constraint firstItem="Nz7-vp-c8a" firstAttribute="top" secondItem="cRj-S4-d9c" secondAttribute="bottom" id="fP5-aN-SFY"/>
+                            <constraint firstItem="eE1-aN-Nac" firstAttribute="trailing" secondItem="Cxi-yl-VIL" secondAttribute="trailing" id="lXe-zl-Uui"/>
+                            <constraint firstAttribute="bottom" secondItem="eE1-aN-Nac" secondAttribute="bottom" id="oVd-2s-xbX"/>
+                            <constraint firstItem="Nz7-vp-c8a" firstAttribute="top" secondItem="eE1-aN-Nac" secondAttribute="top" id="wME-xc-KjB"/>
+                            <constraint firstItem="Cxi-yl-VIL" firstAttribute="trailing" secondItem="cRj-S4-d9c" secondAttribute="trailing" id="yqJ-iU-Gh7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cxi-yl-VIL"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="eE1-aN-Nac" id="Mzr-a6-cXO"/>
+                        <outlet property="detailView" destination="FEA-XX-QmJ" id="YV1-Uf-enr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phY-9g-4Bt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434.78260869565219" y="-191.51785714285714"/>
+        </scene>
+    </scenes>
+</document>
