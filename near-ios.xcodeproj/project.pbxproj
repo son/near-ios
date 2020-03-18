@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		54C5B5DF143E01358793E271 /* Pods_near_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFC443235A36FB24D77EAF5 /* Pods_near_ios.framework */; };
 		E7657BC023D49179002276CE /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7657BBF23D49179002276CE /* RefreshControl.swift */; };
+		E773FE072422555D00DF9373 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773FE062422555D00DF9373 /* Api.swift */; };
+		E773FE0B24225C2600DF9373 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773FE0A24225C2600DF9373 /* Log.swift */; };
+		E773FE0D24225E7F00DF9373 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773FE0C24225E7F00DF9373 /* Place.swift */; };
 		E7D0666E23D48F5100DFF2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0666D23D48F5100DFF2FD /* ViewController.swift */; };
 		E7F4785D23D4894400F6ACB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4785C23D4894400F6ACB5 /* AppDelegate.swift */; };
 		E7F4786623D4894400F6ACB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F4786523D4894400F6ACB5 /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		638CDB7642C92BD2B2625B03 /* Pods-near-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-near-ios.release.xcconfig"; path = "Target Support Files/Pods-near-ios/Pods-near-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E39C77164FC63A0926AA56F3 /* Pods-near-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-near-ios.debug.xcconfig"; path = "Target Support Files/Pods-near-ios/Pods-near-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		E7657BBF23D49179002276CE /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		E773FE062422555D00DF9373 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		E773FE0A24225C2600DF9373 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		E773FE0C24225E7F00DF9373 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E7D0666D23D48F5100DFF2FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7F4785923D4894400F6ACB5 /* near-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "near-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F4785C23D4894400F6ACB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,30 @@
 				0FFC443235A36FB24D77EAF5 /* Pods_near_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E773FE052422555000DF9373 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				E773FE062422555D00DF9373 /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		E773FE0824225A7000DF9373 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E773FE0C24225E7F00DF9373 /* Place.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E773FE0924225C1600DF9373 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				E773FE0A24225C2600DF9373 /* Log.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		E7D0666C23D48F3C00DFF2FD /* ViewController */ = {
@@ -160,6 +190,9 @@
 		E7F4787723D48ACD00F6ACB5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E773FE0924225C1600DF9373 /* Log */,
+				E773FE0824225A7000DF9373 /* Entity */,
+				E773FE052422555000DF9373 /* Api */,
 				E7D0666C23D48F3C00DFF2FD /* ViewController */,
 				E7F4787823D48ACD00F6ACB5 /* NavigationController */,
 				E7F4787A23D48ACD00F6ACB5 /* Extension */,
@@ -374,10 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F4785D23D4894400F6ACB5 /* AppDelegate.swift in Sources */,
+				E773FE0D24225E7F00DF9373 /* Place.swift in Sources */,
 				E7F4789723D48ACD00F6ACB5 /* NavigationController.swift in Sources */,
+				E773FE0B24225C2600DF9373 /* Log.swift in Sources */,
 				E7F4789923D48ACD00F6ACB5 /* UIImageView+Nuke.swift in Sources */,
 				E7F4789423D48ACD00F6ACB5 /* GridCell.swift in Sources */,
 				E7F478A423D48ACD00F6ACB5 /* ShopDetailView.swift in Sources */,
+				E773FE072422555D00DF9373 /* Api.swift in Sources */,
 				E7F4789A23D48ACD00F6ACB5 /* UIView+Animation.swift in Sources */,
 				E7F4789C23D48ACD00F6ACB5 /* RoundButton.swift in Sources */,
 				E7F478A623D48ACD00F6ACB5 /* ShopDetailViewController.swift in Sources */,

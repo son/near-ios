@@ -12,27 +12,9 @@ final class HomeViewController: ViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
-    private let urls = [
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!,
-        URL(string: "https://tabelog.com/imgview/original?id=r94992123358018")!
-    ]
+    private let api = Api()
+
+    private let urls: [URL] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +25,8 @@ final class HomeViewController: ViewController {
         collectionView.refreshControl = RefreshControl { [weak self] _ in
             self?.collectionView.reloadData()
         }
+
+        api.getShops(place: Place(longitude: 139.761457, latitude: 35.669220))
     }
 }
 
