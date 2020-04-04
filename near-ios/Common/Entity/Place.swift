@@ -9,6 +9,6 @@
 import Foundation
 
 struct Place {
-    let longitude: Float
-    let latitude: Float
+    let longitude: String
+    let latitude: String
 }

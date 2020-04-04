@@ -10,6 +10,6 @@ import Foundation
 
 func log(_ object: Any?...) {
     #if DEBUG
-    print("\(object)")
+    print("\(object.map { $0.debugDescription }.joined())")
     #endif
 }

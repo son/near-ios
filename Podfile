@@ -8,5 +8,6 @@ target 'near-ios' do
   # Pods for near-ios
 
 pod 'Nuke'
+pod 'ALRT'
 
 end

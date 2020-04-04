@@ -1,8 +1,8 @@
 //
-//  ShopDetailViewController.swift
+//  _ShopDetailViewController.swift
 //  near-ios
 //
-//  Created by Takeru Sato on 2020/01/19.
+//  Created by Takeru Sato on 2020/04/04.
 //  Copyright © 2020 son. All rights reserved.
 //
 
@@ -12,19 +12,17 @@ final class ShopDetailViewController: ViewController {
 
     @IBOutlet private weak var detailView: ShopDetailView!
     @IBOutlet private weak var bottomView: ShopDetailBottomView!
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
 
-    private var urls = [URL]()
-
-    static func instantiate(urls: [URL]) -> ShopDetailViewController {
-        let viewController = ShopDetailViewController.instantiate()
-        viewController.urls = urls
-        return viewController
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        detailView.urls = urls
 
 
         bottomView.onTapCall = { [weak self] in
@@ -34,6 +32,5 @@ final class ShopDetailViewController: ViewController {
         bottomView.onTapMap = { [weak self] in
 
         }
-
     }
 }

@@ -12,7 +12,7 @@ final class HomeViewController: ViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
-    private let api = Api()
+    private let gps = Gps()
 
     private let urls: [URL] = []
 
@@ -26,15 +26,18 @@ final class HomeViewController: ViewController {
             self?.collectionView.reloadData()
         }
 
-        api.getShops(place: Place(longitude: 139.761457, latitude: 35.669220))
+        gps.requestAuthorization()
+
+        gps.onUpdateLocation = { [weak self] in
+
+        }
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = ShopDetailViewController.instantiate(urls: urls)
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(ShopDetailViewController(), animated: true)
     }
 }
 

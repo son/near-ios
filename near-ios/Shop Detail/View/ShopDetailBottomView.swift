@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ShopDetailBottomView: UIView {
+final class ShopDetailBottomView: UIView, XibOwnerInstantiatable {
 
     var onTapCall: (() -> Void)?
     var onTapMap: (() -> Void)?
@@ -24,17 +24,7 @@ final class ShopDetailBottomView: UIView {
     }
 
     private func initialize() {
-        translatesAutoresizingMaskIntoConstraints = false
-
-        let view = Bundle.main.loadNibNamed("ShopDetailBottomView", owner: self, options: nil)?.first as! UIView
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.frame = bounds
-        addSubview(view)
-
-        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        loadNibContent()
     }
 
     @IBAction private func callButtonTapped(_ sender: RoundButton) {

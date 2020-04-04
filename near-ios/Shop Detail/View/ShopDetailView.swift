@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ShopDetailView: UIView {
+final class ShopDetailView: UIView, XibOwnerInstantiatable {
 
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var stackView: UIStackView!
@@ -27,17 +27,7 @@ final class ShopDetailView: UIView {
     }
 
     private func initialize() {
-        translatesAutoresizingMaskIntoConstraints = false
-
-        let view = Bundle.main.loadNibNamed("ShopDetailView", owner: self, options: nil)?.first as! UIView
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.frame = bounds
-        addSubview(view)
-
-        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        loadNibContent()
     }
 
     var urls: [URL] = [] {
